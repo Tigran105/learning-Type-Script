@@ -45,6 +45,7 @@ const App = () => {
                 items={users}
                 renderItems={(user: IUser) => <UserItem user={user} key={user.id}/>}
             />
+            
             <List
                 items={todos}
                 renderItems={(todo: ITodo) => <TodoItem todo={todo} key={todo.id}/>}
