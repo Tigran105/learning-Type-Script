@@ -3,23 +3,26 @@ import {ITodo} from "../types/types";
 
 interface TodoItemProps {
     todo: ITodo
+    onClick: (user: ITodo) => void
 }
 
-const TodoItem: FC<TodoItemProps> = ({todo}) => {
+const TodoItem: FC<TodoItemProps> = ({todo, onClick}) => {
     const [checked, setChecked] = useState(todo.completed)
     return (
-        <div style={{padding: "15px", border: "1px solid black"}}>
+        <div
+            style={{padding: "15px", border: "1px solid black"}}
+            onClick={() => onClick(todo)}
+        >
             <input id={todo.id + ""}
                    type="checkbox"
                    checked={checked}
                    onChange={() => setChecked(!checked)}
                    style={{cursor: "pointer"}}
             />
-            <label htmlFor={todo.id + ""}
-                   style={{cursor: "pointer"}}
+            <span style={{cursor: "pointer"}}
             >
                 {todo.id}, {`${todo.title}`}
-            </label>
+            </span>
         </div>
     )
 }
