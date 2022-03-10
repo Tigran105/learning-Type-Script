@@ -39,7 +39,7 @@ const App = () => {
                   variant={CardVariant.primary}
             >
                 <button>click me</button>
-                <div>hena gcina</div>
+                <div>it's a normal</div>
             </Card>
             <List
                 items={users}
